@@ -1,4 +1,4 @@
 # Docker Website
 
 ## Link to Website
-* [Click here](index.html)
+* [Click here](https://chinonsochima.github.io/DockerWebsite/)

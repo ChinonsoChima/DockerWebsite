@@ -48,22 +48,37 @@
 
     </div>
     <div class="row">
-        <p class="col-1">Col 1</p>
-        <p class="col-1">Col 2</p>
-        <p class="col-1">Col 3</p>
-        <p class="col-1">Col 4</p>
-        <p class="col-1">Col 5</p>
-        <p class="col-1">Col 6</p>
-        <p class="col-1">Col 7</p>
-        <p class="col-1">Col 8</p>
-        <p class="col-1">Col 9</p>
-        <p class="col-1">Col 10</p>
-        <p class="col-1">Col 11</p>
-        <p class="col-1">Col 12</p>
+        <p class="col-1"></p>
 
-        <div class="col-sm-4  text-center">
-            <h2>h2 Bootstrap heading (24px)</h2>
-            <h3>h2 Bootstrap heading (18px)</h3>
+
+        <div class="col-sm-6  text-left">
+            <h2>How to Connect Docker to Pycharm</h2><br><br>
+            <p><b>1.</b> Install and run Docker.</p><br>
+            <p><b>2.</b> Ensure you have a stable Internet connection.
+
+                To operate with Docker you need the busybox image be available on your machine.
+                Ensure that you have a stable Internet connection, so that PyCharm can download and run busybox:latest.
+                Once you have successfully configured Docker, you can go offline.</p><br>
+
+            <p><b>3.</b> If you are using Docker for Windows, enable connection to Docker via the TCP protocol:
+                Right-click the Docker icon Docker icon on the Notification bar on the Notification bar,
+                select Settings from the context menu, and then select the Expose daemon on tcp://localhost:2375 without
+                TLS checkbox in the General section of your system Docker settings.</p><br>
+
+            <p><b>4.</b> Configure the Docker daemon connection settings:<br><br>
+
+                <b>a. </b>In the Settings/Preferences dialog Ctrl+Alt+S, select Build, Execution, Deployment | Docker.<br><br>
+                <b>b. </b>Click The Add button to add a Docker configuration and specify how to connect to the Docker daemon.
+                The connection settings depend on your Docker version and operating system.
+                For more information, see Docker configuration.</p><br>
+                <b>The Connection successful message should appear at the bottom of the dialog.</b><br><br>
+            <p><b>5. </b>Connect to the Docker daemon.
+
+                The configured Docker connection should appear in the
+                Services tool window (View | Tool Windows | Services or Alt+8). Select the Docker node Docker node,
+                and click The Connect button, or select Connect from the context menu.</p><br><br><br>
+
+
         </div>
     </div>
     <footer class="footer page-footer font-small ">
