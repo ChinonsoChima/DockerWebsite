@@ -48,28 +48,38 @@
 
     </div>
     <div class="row">
-        <p class="col-1">Col 1</p>
-        <p class="col-1">Col 2</p>
-        <p class="col-1">Col 3</p>
-        <p class="col-1">Col 4</p>
-        <p class="col-1">Col 5</p>
-        <p class="col-1">Col 6</p>
-        <p class="col-1">Col 7</p>
-        <p class="col-1">Col 8</p>
-        <p class="col-1">Col 9</p>
-        <p class="col-1">Col 10</p>
-        <p class="col-1">Col 11</p>
-        <p class="col-1">Col 12</p>
+        <p class="col-1"></p>
 
-        <div class="col-sm-4  text-center">
-            <h2>h2 Bootstrap heading (24px)</h2>
-            <h3>h2 Bootstrap heading (18px)</h3>
+        <div class="col-sm-4  text-left">
+            <h2>Setup Apache Web Server on Docker</h2>
+<p>
+<ul>
+<li>Install Docker on your computer</li>
+<li>With Docker running, enter the command: '<i>docker pull ubuntu</i>' in the Command Prompt/Command Line Interface.<br><img src="docker_webserver_images/Picture2.png"></li>
+<li>Update the application packages by using the command: '<i>apt-get update</i>', then '<i>apt-get install apache2</i>', then enter another command: '<i>docker commit</i>'.</li>
+<li>You'll have to share a directory between your host machine and Docker. Enter the command: '<i>docker run -it -v ~/an_absolute_local_directory:/a_diretory_in_Docker_container container_name/bin/bash</i>'<br><img src="docker_webserver_images/Picture3.png"><br>
+ ; the '<i>-v</i>'(volume) command mounts the directory from the host into the specified directory of the container. **DISCLAIMER** Replace the directory names with legitimate directory names.**</li>
+<li>Run the command: '<i>docker ps -a</i>' to see a list of available Docker images and their hashes.<br>
+<img src="docker_webserver_images/Picture4.png"></li>
+<li>From the list of images, you'll see a hash next to the image you just made with Apache2, run the command: '<i>docker commit <inputHash> ubuntu-my_apache2</i>', this will rename the hash from jibberish to a name which you'll easily recognize. **Please input the hash between the < & > signs.**<br>
+<img src="docker_webserver_images/Picture5.png"></li>
+<li>Run your Apache webserver via Docker with the following command: '<i>docker run -it -p 127.0.0.1:80:80 -v ~/folderName/local_dir:/var/www/html ubuntu-my_apache2 /bin/bash<br>
+<img src="docker_webserver_images/Picture6.png"></li>
+<li><i>vi</i> text editor is included with Ubuntu and most Linux distros so once you've initialized your Docker image, change directories to '<i>/var/www/html</i>', via: '<i>cd /var/www/html</i>'<br></li>
+<li>Once you arrive in the <i>/var/www/html/</i> directory, run the command: '<i>vi index.html</i>', Once vi opens, copy the following HTML into your own index.html<br>
+<img src="docker_webserver_images/Picture9-vi.png"></li>
+<li>When you are finished with your index.html file, press the <i>Esc<i>ape key, then enter the following: '<i>:wq</i>', then press <i>Enter</i>. This will write your changes to the file, quit vi, and then bring you back to <i>/var/www/html</i>.</li>
+<li>At the command line, enter the following command: '<i>/etc/init.d/apache2 restart</i>' ; This will restart your Apache server. You ought to see something very similar to this:<br>
+<img src="docker_webserver_images/Picture7.png"></li>
+<li>Open a web browser of your choice then enter "127.0.0.1" in the URL/Address textbox. You've just wrote your first web app! Congratulations!<br>
+<img src="docker_webserver_images/Picture8-helloworld.png"></li>
+<p><br><br>
         </div>
     </div>
     <footer class="footer page-footer font-small ">
         <div class="container">
             <div class="row">
-                <span class="text-muted">&copy; Chinonso Chima-Anyanka,  2021 |  Terms Of Use  |  Privacy Statement</span>
+                <span class="text-muted">&copy; Chinonso Chima-Anyanka, Orville Dillon  2021 |  Terms Of Use  |  Privacy Statement</span>
             </div>
         </div>
     </footer>
